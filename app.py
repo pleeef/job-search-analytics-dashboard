@@ -1,5 +1,6 @@
 import pandas as pd
 import streamlit as st
+import os
 
 from src.data_prep import prepare_data, compute_metrics
 
@@ -14,16 +15,17 @@ from src.charts import (
 st.set_page_config(page_title="Job Search Analytics", layout="wide")
 st.title("Job Search Analytics Dashboard")
 
-# Load data from a local Excel file (kept private; do NOT commit to GitHub)
-DATA_PATH = "data/job-search-analytics.xlsx"
+DATA_PATH = "data/job-search-analytics.xlsx" # local Excel with real data
+SAMPLE_PATH = "data/sample_data.csv"         # Anonymized file for Git
 
-try:
+df_raw = None
+
+if os.path.exists(DATA_PATH):
     df_raw = pd.read_excel(DATA_PATH)
-except Exception as e:
-    st.error(f"Failed to read Excel file at '{DATA_PATH}'. Error: {e}")
-    st.stop()
-
-if df_raw is None:
+elif os.path.exists(SAMPLE_PATH):
+    df_raw = pd.read_csv(SAMPLE_PATH)
+else:
+    st.error("Data files not found in 'data/' folder!")
     st.stop()
 
 try:
