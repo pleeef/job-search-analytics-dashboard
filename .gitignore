@@ -1,0 +1,12 @@
+# Data (private)
+data/job-search-analytics.*
+data/*.xlsx
+data/*.csv
+!data/sample_data.csv
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+.env
+.DS_Store
