@@ -7,6 +7,9 @@ An interactive analytics dashboard designed to track and optimize the job applic
 ## 🔗 Live Demo
 **[View the Live Dashboard Here](https://job-search-analytics-dashboard-za3ssytsoxv6u3ecf4k4wx.streamlit.app/)**
 
+## Visualizations Preview
+![Visualizations Preview](assets/preview.png)
+
 ## 🚀 Key Features
 - **Conversion Funnel:** Visualizes the journey from initial application to final offer (Applications → Replies → Interviews → Offers).
 - **Activity Heatmap:** A GitHub-style intensity map to monitor application consistency and pace.
